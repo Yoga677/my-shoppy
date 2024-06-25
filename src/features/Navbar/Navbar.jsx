@@ -14,6 +14,7 @@ import {
   ShoppingCartIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom";
 
 const user = {
   name: "Tom Cook",
@@ -77,9 +78,9 @@ export default function Navbar({ children }) {
                   </div>
                   <div className="hidden md:block">
                     <div className="ml-4 flex items-center md:ml-6">
-                      <button
-                        type="button"
-                        className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                      <Link
+                        to="/cart" 
+                        className="relative rounded-full mx-5 bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                       >
                         <span className="absolute -inset-1.5" />
                         <span className="sr-only">View notifications</span>
@@ -87,10 +88,10 @@ export default function Navbar({ children }) {
                           className="h-6 w-6"
                           aria-hidden="true"
                         />
-                         <span className="inline-flex absolute top-[-12px] items-center rounded-md   bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-800 ring-1 ring-inset ring-yellow-600/20">
+                         <span className="inline-flex absolute top-[-10px] right-[-12px] items-center rounded-md   bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-800 ring-1 ring-inset ring-yellow-600/20">
                         3
                       </span>
-                      </button>
+                      </Link>
 
                       {/* Profile dropdown */}
                       <Menu as="div" className="relative ml-3">
@@ -185,8 +186,8 @@ export default function Navbar({ children }) {
                         {user.email}
                       </div>
                     </div>
-                    <button
-                      type="button"
+                    <Link
+                      to="/cart" 
                       className="relative ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                     >
                       <span className="absolute -inset-1.5" />
@@ -195,7 +196,7 @@ export default function Navbar({ children }) {
                       <span className="inline-flex absolute top-[-12px] items-center rounded-md   bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-800 ring-1 ring-inset ring-yellow-600/20">
                         3
                       </span>
-                    </button>
+                    </Link>
                   </div>
                   <div className="mt-3 space-y-1 px-2">
                     {userNavigation.map((item) => (
